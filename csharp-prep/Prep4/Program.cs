@@ -19,6 +19,10 @@ class Program
             {
                 listNumbers.Add(inputNumber);
             }
+            else if (inputNumber == 0)
+            {
+                userNumber = 0;
+            }
         }
         //Now let's get the summary of those numbers that the user input.
         int sum = 0; //Declaring the variable here to call it later.
@@ -34,6 +38,8 @@ class Program
         float average = ((float)sum) / listNumbers.Count;
         Console.WriteLine($"The Average of those numbers you added is: {average}");
 
+        /*Find maximum using the built in function .Max() which finds the largest value in list*/
+        Console.WriteLine($"The Maximum of those numbers you added is: {listNumbers.Max()}");
     }
 
 }

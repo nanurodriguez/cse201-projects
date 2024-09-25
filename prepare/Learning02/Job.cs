@@ -10,12 +10,11 @@ using System.Runtime.CompilerServices;
 
 public class Job
 {
-    static void Main(string[] args)
-    {
-        string _company;
-        string _jobTitle;
-        int _startYear;
-        int _endYear;
-    }
+
+    public string _company;
+    public string _jobTitle;
+    public int _startYear;
+    public int _endYear;
+
 }
 

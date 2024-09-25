@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -19,7 +20,21 @@ class Program
         job2._startYear = 2022;
         job2._endYear = 2024;
 
-        job1.DisplayJobDetails();
-        job2.DisplayJobDetails();
+
+        //Adding a new instance: Resume
+
+        Resume fakeResume = new Resume();
+
+        //Adding name to fake resume
+
+        fakeResume._name = "Nancy Rodriguez";
+
+        //Adding  job description to the Fake Resume
+
+        fakeResume._listJobs.Add(job1);
+        fakeResume._listJobs.Add(job2);
+
+        fakeResume.DisplayFakeResume();
+
     }
 }

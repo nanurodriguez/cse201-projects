@@ -11,7 +11,8 @@ public class Resume
     public void DisplayFakeResume()
     {
         Console.WriteLine($"Name: {_name}");
-        Console.WriteLine($"Jobs: {_listJobs}");
+        Console.WriteLine($"Jobs:");
+        Console.WriteLine(_listJobs);
 
         foreach (Job job in _listJobs)
         {

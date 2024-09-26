@@ -1,3 +1,5 @@
+using System.Net.Http.Headers;
+using System.Threading.Tasks.Dataflow;
 using System.Xml.Serialization;
 
 public class Journal
@@ -6,28 +8,55 @@ public class Journal
 
     public void AddEntry(Entry newEntry)
     {
-        Console.WriteLine($"Name: {_name}");
-        Console.WriteLine($"Jobs:");
-        Console.WriteLine(_listJobs);
+        //Adding entry
+        Entry entry1 = new Entry();
+        entry1._entryText = "1. Write";
+        Entry entry2 = new Entry();
+        entry2._entryText = "2. Display";
+        Entry entry3 = new Entry();
+        entry3._entryText = "3. Load";
+        Entry entry4 = new Entry();
+        entry4._entryText = "4. Save";
+        Entry entry5 = new Entry();
+        entry5._entryText = "5. Quit";
 
-        foreach (Job job in _listJobs)
-        {
-            job.DisplayFakeResume();
-        }
     }
-}
-public void DisplayAll()
-{
 
-}
+    public List<Entry> _prompts = new List<Entry>();
 
-public void SaveToFile(string file)
-{
+    public void AddPrompt(Entry newPrompt)
+    {
 
-}
-public void LoadFromFile(string file)
-{
+        //Adding prompts
+        Entry prompt1 = new Entry();
+        prompt1._promptText = "What did you do today?";
+        Entry prompt2 = new Entry();
+        prompt2._promptText = "Did you meet someone?";
+        Entry prompt3 = new Entry();
+        prompt3._promptText = "Let's mention your blessings:";
+        Entry prompt4 = new Entry();
+        prompt4._promptText = "Did you find something interesting in your scripture reading?";
+        Entry prompt5 = new Entry();
+        prompt5._promptText = "Mention something you enjoyed doing today:";
+        Entry prompt6 = new Entry();
+        prompt6._promptText = "Did you learn something new?";
+    }
 
-}
+    DateTime theCurrentTime = DateTime.Now;
+    string dateText = theCurrentTime.ToShortDateString();
+
+    public void DisplayAll()
+    {
+
+    }
+
+    public void SaveToFile(string file)
+    {
+
+    }
+    public void LoadFromFile(string file)
+    {
+
+    }
 
 }

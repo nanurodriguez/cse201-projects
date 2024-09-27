@@ -42,7 +42,7 @@ public class Journal
 
         PromptGenerator prompt = new PromptGenerator();
 
-        prompt._prompts.Add();
+        newPrompt._promptText.Add(prompt1);
     }
 
     public void DisplayAll()

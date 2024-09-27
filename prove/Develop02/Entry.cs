@@ -12,8 +12,9 @@ public class Entry
     {
         Journal journal = new Journal();
 
-        Console.WriteLine("Hello There! I am so glad you returned!");
-        Console.WriteLine("Welcome to YOUR Journal! ");
+        Console.WriteLine("Hello There! Welcome to YOUR Journal! ");
+        Console.WriteLine("I am so glad you returned!");
+
 
         while (true)
         {

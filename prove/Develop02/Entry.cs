@@ -50,7 +50,7 @@ public class Entry
             }
             else
             {
-                Console.WriteLine("It's okay, Let's write in another moment!");
+                Console.WriteLine("It's okay, Let's write another time!");
             }
         }
     }

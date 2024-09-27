@@ -4,30 +4,29 @@ using System.Xml.Serialization;
 
 public class Journal
 {
-    public List<Entry> _entries = new List<Entry>();
 
+    public List<Entry> _entries = new List<Entry>();
+    public PromptGenerator promptGenerator;
+    //Gets to the {PromptGenerator Class and connects to it}
+    public Journal()
+    {
+        _entries = new List<Entry>();
+        promptGenerator = new PromptGenerator();
+    }
     public void AddEntry(Entry newEntry)
     {
         //Adding entry
-        Entry entry1 = new Entry();
-        entry1._entryText = "1. Write";
-        Entry entry2 = new Entry();
-        entry2._entryText = "2. Display";
-        Entry entry3 = new Entry();
-        entry3._entryText = "3. Load";
-        Entry entry4 = new Entry();
-        entry4._entryText = "4. Save";
-        Entry entry5 = new Entry();
-        entry5._entryText = "5. Quit";
+        string _prompts = promptGenerator.GetRandomPrompt();
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
+        Console.WriteLine(theCurrentTime);
 
     }
 
-    public List<Entry> _prompts = new List<Entry>();
 
-    public void AddPrompt(Entry newPrompt)
+    public void GetRandomPrompt(Entry newPrompt)
     {
 
-        //Adding prompts
         Entry prompt1 = new Entry();
         prompt1._promptText = "What did you do today?";
         Entry prompt2 = new Entry();
@@ -40,10 +39,11 @@ public class Journal
         prompt5._promptText = "Mention something you enjoyed doing today:";
         Entry prompt6 = new Entry();
         prompt6._promptText = "Did you learn something new?";
-    }
 
-    DateTime theCurrentTime = DateTime.Now;
-    string dateText = theCurrentTime.ToShortDateString();
+        PromptGenerator prompt = new PromptGenerator();
+
+        prompt._prompts.Add();
+    }
 
     public void DisplayAll()
     {

@@ -1,6 +1,7 @@
 using System.Net.Http.Headers;
 using System.Threading.Tasks.Dataflow;
 using System.Xml.Serialization;
+using System.IO;
 
 public class Journal
 {
@@ -15,7 +16,7 @@ public class Journal
     }
     public void AddEntry(Entry newEntry)
     {
-        //Adding entry
+        //Adding entry to journal
         string _prompts = promptGenerator.GetRandomPrompt();
         DateTime theCurrentTime = DateTime.Now;
         string dateText = theCurrentTime.ToShortDateString();
@@ -27,11 +28,11 @@ public class Journal
     public void GetRandomPrompt()
     {
 
-        PromptGenerator prompt = new PromptGenerator();
+        PromptGenerator prompts = new PromptGenerator();
         string[] strings = {
             "What did you do today?", "Did you meet someone interesting?",
          "Let's mention your blessings:", "Did you find something interesting in your scripture reading?",
-         "Mention something you enjoyed doing today:","Did you learn something new?".
+         "Mention something you enjoyed doing today:","Did you learn something new?"
         };
 
     }
@@ -46,10 +47,50 @@ public class Journal
 
     public void SaveToFile(string file)
     {
+        //Console message showing that is saving to the file:
+        Console.WriteLine("Saving to file 'myFile.txt'... ");
+
+        string fileName = "myFile.txt";
+        try
+        {
+            using (StreamWriter outputFile = new StreamWriter(fileName))
+            {
+                foreach (Entry e in _entries)
+                {
+                    outputFile.WriteLine(e._promptText);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Exceptio: {e.Message}");
+        }
+        finally
+        {
+            Console.WriteLine("Executing finally block.");
+        }
 
     }
     public void LoadFromFile(string file)
     {
+        string lineJournal = "myFile.txt";
+        string[] lines = System.IO.File.ReadAllLines(lineJournal);
+        try
+        {
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split(",");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Exceptio: {e.Message}");
+        }
+        finally
+        {
+            Console.WriteLine("Executing finally block.");
+        }
+
 
     }
 

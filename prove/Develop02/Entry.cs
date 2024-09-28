@@ -42,11 +42,11 @@ public class Entry
             }
             else if (selection == "3")
             {
-                journal.LoadFromFile();
+                journal.LoadFromFile("myFile.txt");
             }
             else if (selection == "4")
             {
-                journal.SaveToFile();
+                journal.SaveToFile("myFile.txt");
             }
             else
             {

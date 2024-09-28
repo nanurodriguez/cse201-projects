@@ -14,7 +14,9 @@ public class Entry
 
         Console.WriteLine("Hello There! Welcome to YOUR Journal! ");
         Console.WriteLine("I am so glad you returned!");
-
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
+        Console.WriteLine(dateText);
 
         while (true)
         {
@@ -29,28 +31,32 @@ public class Entry
             //If selected then:
 
             string selection = Console.ReadLine();
-            float number = float.Parse(selection);
+            //float number = float.Parse(selection);
 
-            if (selection == "1")
-            {
-                journal.GetRandomPrompt();
+            //adding switch for multiple options of selection
 
-            }
-            else if (selection == "2")
+            switch (selection)
             {
-                journal.DisplayAll();
-            }
-            else if (selection == "3")
-            {
-                journal.LoadFromFile("myFile.txt");
-            }
-            else if (selection == "4")
-            {
-                journal.SaveToFile("myFile.txt");
-            }
-            else
-            {
-                Console.WriteLine("It's okay, Let's write another time!");
+                case "1":
+                    journal.GetRandomPrompt();
+                    break;
+
+                case "2":
+                    journal.DisplayAll();
+                    break;
+
+                case "3":
+                    journal.LoadFromFile("myFile.txt");
+                    break;
+
+                case "4":
+                    journal.SaveToFile("myFile.txt");
+                    break;
+
+                case "5":
+                    Console.WriteLine("It's okay, Let's write another time!");
+                    break;
+
             }
         }
     }

@@ -18,9 +18,6 @@ public class Journal
     {
         //Adding entry to journal
         string _prompts = promptGenerator.GetRandomPrompt();
-        DateTime theCurrentTime = DateTime.Now;
-        string dateText = theCurrentTime.ToShortDateString();
-        Console.WriteLine(theCurrentTime);
 
     }
 

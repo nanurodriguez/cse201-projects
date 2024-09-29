@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
 using System.Reflection.Metadata.Ecma335;
+using System.Collections.Generic;
+
 
 public class Entry
 {
@@ -14,9 +16,6 @@ public class Entry
 
         Console.WriteLine("Hello There! Welcome to YOUR Journal! ");
         Console.WriteLine("I am so glad you returned!");
-        DateTime theCurrentTime = DateTime.Now;
-        string dateText = theCurrentTime.ToShortDateString();
-        Console.WriteLine(dateText);
 
         while (true)
         {
@@ -38,7 +37,7 @@ public class Entry
             switch (selection)
             {
                 case "1":
-                    journal.GetRandomPrompt();
+                    journal.AddEntry();
                     break;
 
                 case "2":

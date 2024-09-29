@@ -2,6 +2,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks.Dataflow;
 using System.Xml.Serialization;
 using System.IO;
+using System.Globalization;
 
 public class Journal
 {
@@ -14,24 +15,13 @@ public class Journal
         _entries = new List<Entry>();
         promptGenerator = new PromptGenerator();
     }
-    public void AddEntry(Entry newEntry)
+    public void AddEntry()
     {
         //Adding entry to journal
         string _prompts = promptGenerator.GetRandomPrompt();
-
-    }
-
-
-    public void GetRandomPrompt()
-    {
-
-        PromptGenerator prompts = new PromptGenerator();
-        string[] strings = {
-            "What did you do today?", "Did you meet someone interesting?",
-         "Let's mention your blessings:", "Did you find something interesting in your scripture reading?",
-         "Mention something you enjoyed doing today:","Did you learn something new?"
-        };
-
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
+        Console.WriteLine(dateText);
     }
 
     public void DisplayAll()
@@ -46,15 +36,16 @@ public class Journal
     {
         //Console message showing that is saving to the file:
         Console.WriteLine("Saving to file 'myFile.txt'... ");
+        Entry outputFile = new Entry();
 
-        string fileName = "myFile.txt";
+        string fileName = "myFile.csv";
         try
         {
-            using (StreamWriter outputFile = new StreamWriter(fileName))
+            using (System.IO.StreamWriter OutputFile = new System.IO.StreamWriter(fileName, true)) // true means to add the information to the end of the file
             {
                 foreach (Entry e in _entries)
                 {
-                    outputFile.WriteLine(e._promptText);
+                    OutputFile.WriteLine(e._entryText);
                 }
             }
         }
@@ -70,7 +61,7 @@ public class Journal
     }
     public void LoadFromFile(string file)
     {
-        string lineJournal = "myFile.txt";
+        string lineJournal = "myFile.csv";
         string[] lines = System.IO.File.ReadAllLines(lineJournal);
         try
         {

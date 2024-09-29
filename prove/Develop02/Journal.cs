@@ -8,27 +8,22 @@ public class Journal
 {
 
     public List<Entry> _entries = new List<Entry>();
-    public PromptGenerator promptGenerator;
-    //Gets to the {PromptGenerator Class and connects to it}
-    public Journal()
-    {
-        _entries = new List<Entry>();
-        promptGenerator = new PromptGenerator();
-    }
+
+    public string date = "Date";
+    public string prompt = " - Prompt";
+
     public void AddEntry()
     {
-        //Adding entry to journal
-        string _prompts = promptGenerator.GetRandomPrompt();
-        DateTime theCurrentTime = DateTime.Now;
-        string dateText = theCurrentTime.ToShortDateString();
-        Console.WriteLine(dateText);
+
+
     }
 
     public void DisplayAll()
     {
-        foreach (Entry entry in _entries)
+        foreach (Entry e in _entries)
         {
-            entry.Display();
+            Console.WriteLine(e._date + e._promptText);
+            Console.WriteLine(e._entryText);
         }
     }
 
@@ -36,6 +31,7 @@ public class Journal
     {
         //Console message showing that is saving to the file:
         Console.WriteLine("Saving to file 'myFile.txt'... ");
+
         Entry outputFile = new Entry();
 
         string fileName = "myFile.csv";
@@ -45,6 +41,8 @@ public class Journal
             {
                 foreach (Entry e in _entries)
                 {
+                    OutputFile.WriteLine(e._date);
+                    OutputFile.WriteLine(e._promptText);
                     OutputFile.WriteLine(e._entryText);
                 }
             }
@@ -55,19 +53,22 @@ public class Journal
         }
         finally
         {
-            Console.WriteLine("Executing finally block.");
+            Console.WriteLine("Saved.");
         }
 
     }
     public void LoadFromFile(string file)
     {
+        _entries.Clear();
+
         string lineJournal = "myFile.csv";
         string[] lines = System.IO.File.ReadAllLines(lineJournal);
+        List<string> readList = new List<string>();
         try
         {
             foreach (string line in lines)
             {
-                string[] parts = line.Split(",");
+                readList.Add(line);
             }
         }
         catch (Exception e)
@@ -79,7 +80,21 @@ public class Journal
             Console.WriteLine("Executing finally block.");
         }
 
-
+        /*
+                        if (line.StartsWith(date))
+                        {
+                            string dateText = line;
+                        }
+                        else if (line.StartsWith(prompt))
+                        {
+                            string currentPrompt = line;
+                        }
+                        else
+                        {
+                            string newEntry = line;
+                        }
+                //_entries.Add(new Entry { _date = dateText, _promptText = currentPrompt, _entryText = newEntry });
+        */
     }
 
 }

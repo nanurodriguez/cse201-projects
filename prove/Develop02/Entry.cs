@@ -12,10 +12,7 @@ public class Entry
 
     public void Display()
     {
-        Journal journal = new Journal();
-
-        Console.WriteLine("Hello There! Welcome to YOUR Journal! ");
-        Console.WriteLine("I am so glad you returned!");
+        Journal Journal = new Journal();
 
         while (true)
         {
@@ -28,7 +25,7 @@ public class Entry
             Console.WriteLine("5. Quit: ");
 
             //If selected then:
-
+            Console.WriteLine("What would you like to do? ");
             string selection = Console.ReadLine();
             //float number = float.Parse(selection);
 
@@ -37,25 +34,33 @@ public class Entry
             switch (selection)
             {
                 case "1":
-                    journal.AddEntry();
+                    DateTime theCurrentTime = DateTime.Now;
+                    string dateText = "Date: " + theCurrentTime.ToShortDateString();
+                    PromptGenerator prompt = new PromptGenerator();
+                    string currentPrompt = " - Prompt: " + prompt.GetRandomPrompt();
+                    Console.WriteLine(dateText + currentPrompt);
+
+                    string newEntry = Console.ReadLine();
+
+                    Journal._entries.Add(new Entry { _date = dateText, _promptText = currentPrompt, _entryText = newEntry });
+
                     break;
 
                 case "2":
-                    journal.DisplayAll();
+                    Journal.DisplayAll();
                     break;
 
                 case "3":
-                    journal.LoadFromFile("myFile.txt");
+                    Journal.LoadFromFile("myFile.txt");
                     break;
 
                 case "4":
-                    journal.SaveToFile("myFile.txt");
+                    Journal.SaveToFile("myFile.txt");
                     break;
 
                 case "5":
                     Console.WriteLine("It's okay, Let's write another time!");
                     break;
-
             }
         }
     }

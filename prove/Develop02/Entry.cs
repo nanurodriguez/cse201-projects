@@ -33,24 +33,17 @@ public class Entry
 
             switch (selection)
             {
-                case "1":
-                    DateTime theCurrentTime = DateTime.Now;
-                    string dateText = "Date: " + theCurrentTime.ToShortDateString();
-                    PromptGenerator prompt = new PromptGenerator();
-                    string currentPrompt = " - Prompt: " + prompt.GetRandomPrompt();
-                    Console.WriteLine(dateText + currentPrompt);
+                case "1": //Write:
 
-                    string newEntry = Console.ReadLine();
-
-                    Journal._entries.Add(new Entry { _date = dateText, _promptText = currentPrompt, _entryText = newEntry });
+                    Journal.AddEntry();
 
                     break;
 
-                case "2":
+                case "2": // Display Content of an EntryS
                     Journal.DisplayAll();
                     break;
 
-                case "3":
+                case "3": // Load file myFile.txt
                     Journal.LoadFromFile("myFile.txt");
                     break;
 
@@ -60,6 +53,9 @@ public class Entry
 
                 case "5":
                     Console.WriteLine("It's okay, Let's write another time!");
+                    break;
+                default: // will prompt the user to enter the correct option
+                    Console.WriteLine("Incorrect Entry! Please try again by selecting the options 1-5.");
                     break;
             }
         }

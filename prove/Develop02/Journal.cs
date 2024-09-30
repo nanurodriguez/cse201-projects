@@ -6,18 +6,30 @@ using System.Globalization;
 
 public class Journal
 {
-
+    //Creating a list for the new entries.
     public List<Entry> _entries = new List<Entry>();
-
+    // creating a variable for date and prompt
     public string date = "Date";
     public string prompt = " - Prompt";
 
     public void AddEntry()
     {
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = "Date: " + theCurrentTime.ToShortDateString();
+        PromptGenerator prompt = new PromptGenerator();
+        string currentPrompt = " - Prompt: " + prompt.GetRandomPrompt();
+        Console.WriteLine(dateText + currentPrompt);
 
+        string newEntry = Console.ReadLine();
+
+        //Adding a new instance: Journal
+
+        Journal nextEntry = new Journal();
+
+        nextEntry._entries.Add(new Entry { _date = dateText, _promptText = currentPrompt, _entryText = newEntry });
 
     }
-
+    // Every time the user enters an entry the app will get the date and the prompt text and then display it in the console.
     public void DisplayAll()
     {
         foreach (Entry e in _entries)
@@ -27,6 +39,7 @@ public class Journal
         }
     }
 
+    // adding entries, date, prompt text and entry text to the myFile.csv
     public void SaveToFile(string file)
     {
         //Console message showing that is saving to the file:
@@ -57,6 +70,7 @@ public class Journal
         }
 
     }
+    //Loading from file will load the stored file in the console
     public void LoadFromFile(string file)
     {
         _entries.Clear();

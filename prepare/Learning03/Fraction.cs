@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Reflection;
 
 
@@ -12,7 +13,7 @@ public class Fraction
     {
         topNumerator = 1;
         bottomDenominator = 1;
-        Console.WriteLine($"{topNumerator} / {bottomDenominator}");
+        //Console.WriteLine($"{topNumerator} / {bottomDenominator}");
         //Display: Console.WriteLine("Fraction: " + firstFraction.Fraction() );
 
     }
@@ -22,7 +23,7 @@ public class Fraction
     {
         topNumerator = top;
         bottomDenominator = 1;
-        Console.WriteLine($"{topNumerator} / {bottomDenominator}");
+        //Console.WriteLine($"{topNumerator} / {bottomDenominator}");
 
     }
 
@@ -39,12 +40,39 @@ public class Fraction
         return bottomDenominator;
     }
 
-    //Setter for the topNumber
+    //Setter for the GetFraction
     public void GetFraction(int topNumber, int bottomNumber)
     {
         topNumerator = topNumber;
         bottomDenominator = bottomNumber;
-        Console.WriteLine($"{topNumber} / {bottomNumber}");
+        //Console.WriteLine($"{topNumber} / {bottomNumber}");
     }
+
+    //Adding a method that will retrieve the form of the actual Fraction for every Constructor and setter we have mentioned above
+
+    public void GetFractionString(int top, int bottom)
+    {
+        topNumerator = top;
+        bottomDenominator = bottom;
+        Console.WriteLine($"{top} / {bottom}");
+
+    }
+
+    public void GetDecimalValue(int top, int bottom)
+    {
+        topNumerator = top;
+        bottomDenominator = bottom;
+
+        decimal divide = top / bottom;
+
+        while (divide != 0)
+        {
+            Console.WriteLine(divide);
+
+        }
+
+
+    }
+
 
 }

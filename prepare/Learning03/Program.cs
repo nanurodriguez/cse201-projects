@@ -7,20 +7,33 @@ class Program
     {
         Console.WriteLine("Let's test the program...");
 
-        // Calling the first Constructor "OneFraction"
+        /* // Calling the first Constructor "OneFraction"
 
-        Fraction firstFraction = new Fraction();
-        firstFraction.OneFraction(); // value 1/1
+         Fraction firstFraction = new Fraction();
+         firstFraction.OneFraction(); // value 1/1
 
-        //Calling second constructor "TwoFraction" and assigning the number 5 to the top (nominator)
-        Fraction secondFraction = new Fraction();
-        secondFraction.TwoFraction(5); // value of 5 for top variable = 5/1
+         //Calling second constructor "TwoFraction" and assigning the number 5 to the top (nominator)
+         Fraction secondFraction = new Fraction();
+         secondFraction.TwoFraction(5); // value of 5 for top variable = 5/1
 
 
-        //Calling the Nominator and Denominator and setting a value in the GetFractionString method.
+         //Calling the Nominator and Denominator and setting a value in the GetFractionString method.
 
-        Fraction newNominator = new Fraction();
+         Fraction newNominator = new Fraction();
 
-        newNominator.GetFraction(3, 4); //Values: Nominator: 3  / Denominator: 4 = 3/4
+         newNominator.GetFraction(3, 4); //Values: Nominator: 3  / Denominator: 4 = 3/4
+ */
+        //Starting Assignment:
+
+        Fraction fraction = new Fraction();
+
+        fraction.GetFractionString(1, 1);
+
+        Fraction decimalValue = new Fraction();
+
+        decimalValue.GetDecimalValue(1, 1);
+
+
     }
+
 }

@@ -47,15 +47,10 @@ public class Fraction
     }
 
     //Setter for the topNumber
-    public void SetNominator(int topNumber)
+    public void SetNominatorDenominator(int topNumber, int bottomNumber)
     {
         topNumerator = topNumber;
-    }
-
-    //Setter for the bottomNumber
-
-    public void SetDenominator(int bottomNumber)
-    {
         bottomDenominator = bottomNumber;
+        Console.WriteLine($"{topNumber} / {bottomNumber}");
     }
 }

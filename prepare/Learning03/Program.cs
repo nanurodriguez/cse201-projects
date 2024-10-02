@@ -20,5 +20,17 @@ class Program
         Fraction thirdFraction = new Fraction();
         thirdFraction.ThreeFraction(1, 2); //Assigning nominator and denominator
 
+        //Calling the Nominator and Denominator and setting a value
+
+        Fraction newNominator = new Fraction();
+
+        newNominator.SetNominator(2); //Value: 2 (Nominator)
+
+        Fraction newDenominator = new Fraction();
+
+        newDenominator.SetDenominator(3); //Value:3 (Denominator)
+
+
+
     }
 }

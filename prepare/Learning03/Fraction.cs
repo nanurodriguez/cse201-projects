@@ -7,6 +7,7 @@ public class Fraction
     private int topNumerator;
     private int bottomDenominator;
 
+    //Constructor OneFraction
     public void OneFraction()
     {
         topNumerator = 1;
@@ -16,6 +17,7 @@ public class Fraction
 
     }
 
+    //Constructor TwoFraction
     public void TwoFraction(int top)
     {
         topNumerator = top;
@@ -24,6 +26,7 @@ public class Fraction
 
     }
 
+    //Constructor ThreeFraction
     public void ThreeFraction(int top, int bottom)
     {
         topNumerator = top;
@@ -31,5 +34,28 @@ public class Fraction
         Console.WriteLine($"{topNumerator} / {bottomDenominator}");
 
     }
+    // Getter for the Nominator or topNumerator
+    public int GetNominator()
+    {
+        return topNumerator;
+    }
+    // Getter for the Denominator or bottomDenominator
 
+    public int GetDenominator()
+    {
+        return bottomDenominator;
+    }
+
+    //Setter for the topNumber
+    public void SetNominator(int topNumber)
+    {
+        topNumerator = topNumber;
+    }
+
+    //Setter for the bottomNumber
+
+    public void SetDenominator(int bottomNumber)
+    {
+        bottomDenominator = bottomNumber;
+    }
 }

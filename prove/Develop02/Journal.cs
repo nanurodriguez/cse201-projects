@@ -3,7 +3,7 @@ using System.Threading.Tasks.Dataflow;
 using System.Xml.Serialization;
 using System.IO;
 using System.Globalization;
-
+using System.Collections.Generic;
 public class Journal
 {
     //Creating a list for the new entries.
@@ -24,13 +24,15 @@ public class Journal
 
         //Adding a new instance: Journal
 
-        Journal nextEntry = new Journal();
+        Journal saveEntry = new Journal();
 
-        nextEntry._entries.Add(new Entry { _date = dateText, _promptText = currentPrompt, _entryText = newEntry });
+        saveEntry._entries.Add(new Entry { _date = dateText, _promptText = currentPrompt, _entryText = newEntry });
 
+        SaveToFile(_entries);
     }
     // Every time the user enters an entry the app will get the date and the prompt text and then display it in the console.
-    public void DisplayAll()
+
+    public void DisplayAll(Entry newEntry)
     {
         foreach (Entry e in _entries)
         {
@@ -40,12 +42,60 @@ public class Journal
     }
 
     // adding entries, date, prompt text and entry text to the myFile.csv
-    public void SaveToFile(string file)
+
+    public static LoadFromFile(string file)
+    {
+        Console.WriteLine("Reading this from File...");
+        List<string> readList = new List<string>();
+        string lineJournal = "myFile.csv";
+        string[] lines = System.IO.File.ReadAllLines(lineJournal);
+
+        //try
+        {
+            foreach (string line in lines)
+            {
+                //readList.Add(line);
+                //Console.WriteLine(line);
+                string[] parts = line.Split(",");
+                //Loading each part of the journal
+                Entry anotherEntry = new Entry();
+                anotherEntry._date = parts[0];
+                anotherEntry._promptText = parts[1];
+                anotherEntry._entryText = parts[2];
+            }
+            return readList;
+        }
+
+        /*catch (Exception e)
+        {
+            Console.WriteLine($"Exceptio: {e.Message}");
+        }
+        finally
+        {
+            Console.WriteLine("Executing finally block.");
+        }
+
+        
+                        if (line.StartsWith(date))
+                        {
+                            string dateText = line;
+                        }
+                        else if (line.StartsWith(prompt))
+                        {
+                            string currentPrompt = line;
+                        }
+                        else
+                        {
+                            string newEntry = line;
+                        }
+                //
+        */
+    }
+
+    public void SaveToFile(List<Entry> _entries)
     {
         //Console message showing that is saving to the file:
-        Console.WriteLine("Saving to file 'myFile.txt'... ");
-
-        Entry outputFile = new Entry();
+        Console.WriteLine("Saving to file 'myFile.csv'... ");
 
         string fileName = "myFile.csv";
         try
@@ -62,53 +112,13 @@ public class Journal
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Exceptio: {e.Message}");
+            Console.WriteLine($"Exception: {e.Message}");
         }
         finally
         {
             Console.WriteLine("Saved.");
         }
 
-    }
-    //Loading from file will load the stored file in the console
-    public void LoadFromFile(string file)
-    {
-        _entries.Clear();
-
-        string lineJournal = "myFile.csv";
-        string[] lines = System.IO.File.ReadAllLines(lineJournal);
-        List<string> readList = new List<string>();
-        try
-        {
-            foreach (string line in lines)
-            {
-                readList.Add(line);
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"Exceptio: {e.Message}");
-        }
-        finally
-        {
-            Console.WriteLine("Executing finally block.");
-        }
-
-        /*
-                        if (line.StartsWith(date))
-                        {
-                            string dateText = line;
-                        }
-                        else if (line.StartsWith(prompt))
-                        {
-                            string currentPrompt = line;
-                        }
-                        else
-                        {
-                            string newEntry = line;
-                        }
-                //_entries.Add(new Entry { _date = dateText, _promptText = currentPrompt, _entryText = newEntry });
-        */
     }
 
 }

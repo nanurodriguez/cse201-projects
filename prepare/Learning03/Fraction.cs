@@ -26,14 +26,7 @@ public class Fraction
 
     }
 
-    //Constructor ThreeFraction
-    public void ThreeFraction(int top, int bottom)
-    {
-        topNumerator = top;
-        bottomDenominator = bottom;
-        Console.WriteLine($"{topNumerator} / {bottomDenominator}");
 
-    }
     // Getter for the Nominator or topNumerator
     public int GetNominator()
     {

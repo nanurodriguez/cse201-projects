@@ -16,9 +16,6 @@ class Program
         Fraction secondFraction = new Fraction();
         secondFraction.TwoFraction(5); // value of 5 for top variable = 5/1
 
-        //Calling third constructor "ThreeFraction" and assigning the number 5 to the top (nominator)
-        Fraction thirdFraction = new Fraction();
-        thirdFraction.ThreeFraction(1, 2); //Assigning nominator and denominator = 1/2
 
         //Calling the Nominator and Denominator and setting a value in the GetFractionString method.
 

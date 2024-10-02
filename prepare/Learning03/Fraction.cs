@@ -12,7 +12,7 @@ public class Fraction
     {
         topNumerator = 1;
         bottomDenominator = 1;
-        Console.WriteLine($"{topNumerator} / {bottomDenominator}");
+        //Console.WriteLine($"{topNumerator} / {bottomDenominator}");
         //Display: Console.WriteLine("Fraction: " + firstFraction.Fraction() );
 
     }
@@ -22,7 +22,7 @@ public class Fraction
     {
         topNumerator = top;
         bottomDenominator = 1;
-        Console.WriteLine($"{topNumerator} / {bottomDenominator}");
+        //Console.WriteLine($"{topNumerator} / {bottomDenominator}");
 
     }
 
@@ -47,10 +47,11 @@ public class Fraction
     }
 
     //Setter for the topNumber
-    public void SetNominatorDenominator(int topNumber, int bottomNumber)
+    public void GetFraction(int topNumber, int bottomNumber)
     {
         topNumerator = topNumber;
         bottomDenominator = bottomNumber;
         Console.WriteLine($"{topNumber} / {bottomNumber}");
     }
+
 }

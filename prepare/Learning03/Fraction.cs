@@ -8,11 +8,11 @@ public class Fraction
     private int bottomDenominator;
 
     //Constructor OneFraction
-    public void OneFraction()
+    public OneFraction()
     {
         topNumerator = 1;
         bottomDenominator = 1;
-        //Console.WriteLine($"{topNumerator} / {bottomDenominator}");
+        Console.WriteLine($"{topNumerator} / {bottomDenominator}");
         //Display: Console.WriteLine("Fraction: " + firstFraction.Fraction() );
 
     }
@@ -22,7 +22,7 @@ public class Fraction
     {
         topNumerator = top;
         bottomDenominator = 1;
-        //Console.WriteLine($"{topNumerator} / {bottomDenominator}");
+        Console.WriteLine($"{topNumerator} / {bottomDenominator}");
 
     }
 

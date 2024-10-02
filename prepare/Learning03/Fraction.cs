@@ -8,7 +8,7 @@ public class Fraction
     private int bottomDenominator;
 
     //Constructor OneFraction
-    public OneFraction()
+    public void OneFraction()
     {
         topNumerator = 1;
         bottomDenominator = 1;

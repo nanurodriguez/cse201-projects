@@ -7,31 +7,24 @@ class Program
     {
         Console.WriteLine("Let's test the program...");
 
-        /* // Calling the first Constructor "OneFraction"
-
-         Fraction firstFraction = new Fraction();
-         firstFraction.OneFraction(); // value 1/1
-
-         //Calling second constructor "TwoFraction" and assigning the number 5 to the top (nominator)
-         Fraction secondFraction = new Fraction();
-         secondFraction.TwoFraction(5); // value of 5 for top variable = 5/1
 
 
-         //Calling the Nominator and Denominator and setting a value in the GetFractionString method.
+        Fraction fraction1 = new Fraction();
+        Console.WriteLine(fraction1.GetFractionString());
+        Console.WriteLine(fraction1.GetDecimalValue());  // value 0
 
-         Fraction newNominator = new Fraction();
+        Fraction fraction2 = new Fraction(5);
+        Console.WriteLine(fraction2.GetFractionString());
+        Console.WriteLine(fraction2.GetDecimalValue());  // value 5/1
 
-         newNominator.GetFraction(3, 4); //Values: Nominator: 3  / Denominator: 4 = 3/4
- */
-        //Starting Assignment:
+        Fraction fraction3 = new Fraction(3, 4);
+        Console.WriteLine(fraction3.GetFractionString());
+        Console.WriteLine(fraction3.GetDecimalValue());  // value 3/4
 
-        Fraction fraction = new Fraction();
+        Fraction fraction4 = new Fraction(1, 3);
+        Console.WriteLine(fraction4.GetFractionString());
+        Console.WriteLine(fraction4.GetDecimalValue());  // value 1/3
 
-        fraction.GetFractionString(1, 1);
-
-        Fraction decimalValue = new Fraction();
-
-        decimalValue.GetDecimalValue(1, 1);
 
 
     }

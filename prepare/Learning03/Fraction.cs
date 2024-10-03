@@ -5,72 +5,43 @@ using System.Reflection;
 
 public class Fraction
 {
-    private int topNumerator;
-    private int bottomDenominator;
+    private int _topNumerator;
+    private int _bottomDenominator;
 
-    //Constructor OneFraction
-    public void OneFraction()
+    //Constructor 
+    public Fraction()
     {
-        topNumerator = 1;
-        bottomDenominator = 1;
-        //Console.WriteLine($"{topNumerator} / {bottomDenominator}");
-        //Display: Console.WriteLine("Fraction: " + firstFraction.Fraction() );
+        _topNumerator = 1;
+        _bottomDenominator = 1;
+    }
+
+    //Constructor 
+    public Fraction(int five)
+    {
+        _topNumerator = five;
+        _bottomDenominator = 1;
 
     }
 
-    //Constructor TwoFraction
-    public void TwoFraction(int top)
+    public Fraction(int topNumber, int bottomNumber)
     {
-        topNumerator = top;
-        bottomDenominator = 1;
-        //Console.WriteLine($"{topNumerator} / {bottomDenominator}");
-
-    }
-
-
-    // Getter for the Nominator or topNumerator
-    public int GetNominator()
-    {
-        return topNumerator;
-    }
-    // Getter for the Denominator or bottomDenominator
-
-    public int GetDenominator()
-    {
-        return bottomDenominator;
-    }
-
-    //Setter for the GetFraction
-    public void GetFraction(int topNumber, int bottomNumber)
-    {
-        topNumerator = topNumber;
-        bottomDenominator = bottomNumber;
-        //Console.WriteLine($"{topNumber} / {bottomNumber}");
+        _topNumerator = topNumber;
+        _bottomDenominator = bottomNumber;
     }
 
     //Adding a method that will retrieve the form of the actual Fraction for every Constructor and setter we have mentioned above
 
-    public void GetFractionString(int top, int bottom)
+    public string GetFractionString()
     {
-        topNumerator = top;
-        bottomDenominator = bottom;
-        Console.WriteLine($"{top} / {bottom}");
+        string fraction = $"{_topNumerator} / {_bottomDenominator}";
+        return fraction;
 
     }
 
-    public void GetDecimalValue(int top, int bottom)
+    public double GetDecimalValue()
     {
-        topNumerator = top;
-        bottomDenominator = bottom;
 
-        decimal divide = top / bottom;
-
-        while (divide != 0)
-        {
-            Console.WriteLine(divide);
-
-        }
-
+        return (double)_topNumerator / (double)_bottomDenominator;
 
     }
 

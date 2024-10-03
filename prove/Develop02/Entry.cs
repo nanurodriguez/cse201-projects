@@ -33,7 +33,8 @@ public class Entry
 
             switch (selection)
             {
-                case "1": //Write:
+                case "1": //Write:Write a new entry - Show the user a random prompt 
+                          //(from a list that you create), and save their response, the prompt, and the date as an Entry.
 
                     Journal.AddEntry();
 

@@ -17,29 +17,48 @@ public class Scripture
 
         //Pulls text from Program (scripture verse) and transforms into list named words
 
-        string[] words = _text.Split(' ');
+        string[] words = _text.Split(' '); //split long string into list separated by ' ' (space)
 
         foreach (var item in words)
         {
-            _words.Add(new Word(item));
+            _words.Add(new Word(item)); //create list of objects that will contain (_text, _isHidden = False)
         }
     }
 
-    public void HideRandomWords()
+    public void HideRandomWords(int numberToHide)
     {
         //code to hide the random word selected Random
         Random random = new Random();
-        int randomNumber1 = random.Next(_words.Count);
-        int randomNumber2 = random.Next(_words.Count);
-        int randomNumber3 = random.Next(_words.Count);
 
+        int counter = 0; //initiate counter
+
+        do
+        {
+            int randomNumber = random.Next(_words.Count); //create random number to find
+            if (!_words[randomNumber].IsHidden()) //check if list item is already hidden or not
+            {
+                counter++; //add to counter to show succesful hide of list item.
+                _words[randomNumber].Hide(); //hide
+                if (IsCompletelyHidden())
+                {
+                    break;
+                }
+            }
+        } while (counter != numberToHide); //Verify that 3 NEW list items have been hidden.
     }
 
     // GetDisplayText will make the scripture available for the user
     public string GetDisplayText()
     {
-        Word word = new Word(_text);
-        string _currentVerse = word.GetDisplayText();
+        //Word word = new Word(_text);
+        //string _currentVerse = word.GetDisplayText();
+        string _currentVerse = "";
+
+        foreach (Word word in _words) //Retrieve Text OR Filler for each index of the list of Objects named _words
+        {
+            string getText = word.GetDisplayText(); //Whether ___ or Text from Word class, set as string anmed getText
+            _currentVerse = _currentVerse + getText; //combine all results into one string to display.
+        }
 
         Console.Clear();
         string scripture1 = $"{_reference.GetDisplayText()} {_currentVerse}.";
@@ -49,6 +68,18 @@ public class Scripture
     // so the code can quit
     public bool IsCompletelyHidden()
     {
-        return true;
+        foreach (Word word in _words)
+        {
+            if (word.IsHidden())
+            {
+                //if Is Hidden (true) - do nothing
+            }
+            else
+            {
+                return false; //If not hidden, then all are not completely hidden
+            }
+
+        }
+        return true; //For loop completes if all IsHidden and returns true value.
     }
 }

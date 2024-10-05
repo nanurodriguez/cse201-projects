@@ -20,38 +20,30 @@ public class Word
     //Hide method will help us hide the words we choose to hide
     public void Hide()
     {
-        _text = "______";
+        _isHidden = true;
     }
     //Show method will help us show the words we choose to show
     public void Show()
     {
+        _isHidden = false;
     }
     //IsHidden method will help us know the words that were hidden.
     public bool IsHidden()
     {
-        return true;
+        return _isHidden;
     }
 
     // Getter and Setter - helping us display the text to the screen
     public string GetDisplayText()
     {
-        string[] words = _text.Split(' ');
-
-        foreach (var word in words)
+        if (_isHidden) //check if item from list is currently hidden.
         {
-            _words.Add(new Word(word));
+            string underline = new string('_', _text.Length); // If hidden from HideRandomWords(), show visually that it is hidden by changing letters to _
+            return underline + " ";
         }
-
-
-
-        string _currentVerse = "";
-
-        foreach (var item in _words)
+        else
         {
-            _currentVerse += $" {item._text}";
+            return $"{_text} "; //If not hidden, return text/current item value.
         }
-
-
-        return _currentVerse;
     }
 }

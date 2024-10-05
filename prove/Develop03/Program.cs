@@ -5,21 +5,23 @@ class Program
 {
     static void Main(string[] args)
     {
-        Scripture scripture = new Scripture();
+        string verse = "For behold, this is my work and my glory—to bring to pass the immortality and eternal life of man";
 
-        Console.WriteLine("Testing Scripture Memorizer: ");
+        Reference reference = new Reference("Moses", 1, 39);
+        //Console.Write(reference.GetDisplayText());
+        Scripture scripture = new Scripture(reference, verse);
         Console.WriteLine(scripture.GetDisplayText());
 
-        //Calling the GetDisplayText to display first reference
-        Reference reference = new Reference("Moses", 1, 39);
-        Console.WriteLine(reference.GetDisplayText());
-
-        //Calling the GetDisplayText2 to display second reference
-        Reference reference2 = new Reference("2 Nephi", 2, 6, 9);
-        Console.WriteLine(reference2.GetDisplayText2());
-
-        //Calling the GetDisplayText to display third reference 
-        Reference reference3 = new Reference("2 Nephi", 32, 8);
-        Console.WriteLine(reference3.GetDisplayText());
+        Console.WriteLine("Press Enter to Continue or quit to exit.");
+        string answer = Console.ReadLine();
+        if (answer == "quit")
+        {
+            System.Environment.Exit(0); //terminates program (built in method)
+        }
+        else
+        {
+            scripture.HideRandomWords();
+            Console.WriteLine(scripture.GetDisplayText());
+        }
     }
 }

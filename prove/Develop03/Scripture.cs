@@ -44,7 +44,7 @@ public class Scripture
                     break;
                 }
             }
-        } while (counter != numberToHide); //Verify that 3 NEW list items have been hidden.
+        } while (counter != numberToHide); //Verify that 3 NEW list items have been hidden. (numberToHide = parameter that takes place in HideRandomWords and that will be used in the program Class: scripture.HideRandomWords(3);)
     }
 
     // GetDisplayText will make the scripture available for the user
@@ -52,7 +52,7 @@ public class Scripture
     {
         //Word word = new Word(_text);
         //string _currentVerse = word.GetDisplayText();
-        string _currentVerse = "";
+        string _currentVerse = ""; //sets the beginning value of the Scripture so we can begin with adding or printing the scripture reference and verse.
 
         foreach (Word word in _words) //Retrieve Text OR Filler for each index of the list of Objects named _words
         {

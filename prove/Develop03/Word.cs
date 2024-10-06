@@ -14,26 +14,30 @@ public class Word
     public Word(string text)
     {
         _text = text;
-        _isHidden = false;
+        _isHidden = false; //= at the beginning of the program we show all the characters so we set the first value of _isHidden to false so it won't hide the words until we call the Hide() method
+
     }
 
-    //Hide method will help us hide the words we choose to hide
+    //if we set the value of _isHidden to = true; then the program will Hide the random words (index) from HideRandomWords
     public void Hide()
     {
         _isHidden = true;
     }
-    //Show method will help us show the words we choose to show
+    //If we set the value of _isHidden to = false; then the program will take  Show() = false
     public void Show()
     {
         _isHidden = false;
     }
-    //IsHidden method will help us know the words that were hidden.
+    //then we return to the _isHidden value to keep working with those values 
     public bool IsHidden()
     {
         return _isHidden;
     }
 
-    // Getter and Setter - helping us display the text to the screen
+    // Getter and Setter - If _isHidden took place and an item has been hidden then you should (new string= " __") 
+    //this will help us add a new string value then the next parameter is _text.Length which will count the charachters of the word that has been hidden.
+    //Finally it will return the current local variable "underline" plus the string- ELSE: if nothing was hidden then it will return the text or current value
+
     public string GetDisplayText()
     {
         if (_isHidden) //check if item from list is currently hidden.

@@ -29,7 +29,7 @@ class Program
             scripture.HideRandomWords(3);
 
             Console.WriteLine(scripture.GetDisplayText());
-        } while (!scripture.IsCompletelyHidden());
+        } while (!scripture.IsCompletelyHidden()); //while the scripture is not ! completely hidden- keep running the code.
 
     }
 }

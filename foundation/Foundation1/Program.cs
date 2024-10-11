@@ -5,8 +5,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        Video video1 = new Video();
-        Console.WriteLine(video1.DisplayVideo());
+        string title1 = "How to use product 1 video";
+        string author1 = "USER1";
+        int lenght = 60;
+        Comment comment1 = new Comment("UserX", "Great Job!");
+
+        Video video1 = new Video(title1, author1, lenght, comment1);
+        Console.WriteLine(video1.DisplayAll());
     }
 }
 

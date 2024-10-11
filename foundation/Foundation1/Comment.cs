@@ -7,23 +7,14 @@ public class Comment
 
     public string _comments;
 
-    public void AddComment(string comment)
+    public Comment(string user, string comment)
     {
-
+        _commentUser = user;
         _comments = comment;
-
-        string[] words = _comments.Split(' '); //split long string into list separated by ' ' (space)
-
-        foreach (var item in words)
-        {
-
-            _comments.Add(new Video());
-        }
     }
 
-    public string DisplayComments()
+    public string DisplayAll()
     {
-        Console.Write($"Comments:");
         string commenting = $@"Comments:
                             -{_commentUser}- {_comments}";
         return commenting;

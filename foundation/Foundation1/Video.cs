@@ -24,7 +24,7 @@ public class Video
         foreach (string item in commentList)
         {
             string[] commentAndUser = item.Split(" - ");
-            _comments.Add(new Comment(commentAndUser[0], commentAndUser[1]));
+            _comments.Add(new Comment(commentAndUser[0], commentAndUser[1]));// separating the user from the comment
         }
 
     }
@@ -39,6 +39,8 @@ public class Video
 
     public string DisplayAll()
     {
+        // displaying video details and comment details  as requested
+
         string _videoText = "";
         foreach (Comment comment in _comments)
         {
@@ -47,8 +49,7 @@ public class Video
         }
 
         int count = CountComments();
-        //string commentText = _comment.DisplayAll();
-        string video1 = $"{_title} - {_author} - {_videoLength} seconds - \nComments({count}): {_videoText}";
+        string video1 = $"{_title} - {_author} - {_videoLength} seconds - \nComments({count}): {_videoText}";// \n comments in another line- 
         return video1;
         //displays the video title, author name, video lenght in seconds.
     }

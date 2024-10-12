@@ -13,14 +13,6 @@ public class Comment
         _commentUser = user;
         _comments = comments;
 
-        /*foreach (var item in _commentAndUser)
-        {
-            string[] userAndComment = item.Split(" - ");
-            Comment_commentUser.Add[]
-
-        }
-        */
-
     }
 
     public string DisplayAll()

@@ -8,6 +8,11 @@ public class Customer
 
     private class _address;
 
+    public Customer(string customerName)
+    {
+        _customerName = customerName;
+    }
+
     public bool Location()
     {
         //- Method that returns whether they live in the US or not.(HINT!: this 

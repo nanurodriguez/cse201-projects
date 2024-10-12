@@ -12,6 +12,15 @@ public class Order
 
     private double _shippingWorldwide;
 
+    public Order(List<string> products, string nameCustomer, double shippingUS, double shippingWorldwide)
+    {
+        _products = products;
+        _nameCustomer = nameCustomer;
+        _shippingUS = shippingUS;
+        _shippingWorldwide = shippingWorldwide;
+
+    }
+
 
 
     public void AddProduct(Product product)

@@ -7,12 +7,10 @@ public class Video
     public string _author;
     public int _videoLength; //in seconds
 
-    public Comment _comment;
-
-    public string _text;
+    public string _comment;
 
     public List<Comment> _comments = new List<Comment>();
-    public Video(string title, string author, int videoLenght, Comment comment)
+    public Video(string title, string author, int videoLenght, string comment)
     {
         //Stores a list of comments and adds it to the video display all
 
@@ -21,24 +19,22 @@ public class Video
         _author = author;
         _videoLength = videoLenght;
 
-        /*string[] words = _text.Split(' ');
+        string[] commentList = _comment.Split(" , ");
 
-        foreach (var item in words)
+        foreach (string item in commentList)
         {
-            _comments.Add(new Comment(item, item));// creating list of objects
+            string[] commentAndUser = item.Split(" - ");
+            _comments.Add(new Comment(commentAndUser[0], commentAndUser[1]));
         }
-        */
+
     }
-    /*
-   public int CountComments()
-   {
+    public int CountComments()
+    {
 
-       string comment = "";
-       int count = comment.Split('/').Length - 1;
-       return count; //returning number of comments from the comment section
+        int count = _comments.Count;
+        return count; //returning number of comments from the comment section
 
-   }
-    */
+    }
 
 
     public string DisplayAll()
@@ -47,10 +43,12 @@ public class Video
         foreach (Comment comment in _comments)
         {
             string getText = comment.DisplayAll();
-            _videoText = _videoText + getText;
+            _videoText = _videoText + $"\n{getText}";
         }
-        string video1 = $"{_title} - {_author} - {_videoLength} seconds";
-        //{_comments.DisplayAll()}";
+
+        int count = CountComments();
+        //string commentText = _comment.DisplayAll();
+        string video1 = $"{_title} - {_author} - {_videoLength} seconds - \nComments({count}): {_videoText}";
         return video1;
         //displays the video title, author name, video lenght in seconds.
     }

@@ -1,22 +1,31 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 
 public class Comment
 {
-    public string _commentUser;
 
+    public string _commentUser;
     public string _comments;
 
-    public Comment(string user, string comment)
+    public Comment(string user, string comments)
     {
         _commentUser = user;
-        _comments = comment;
+        _comments = comments;
+
+        /*foreach (var item in _commentAndUser)
+        {
+            string[] userAndComment = item.Split(" - ");
+            Comment_commentUser.Add[]
+
+        }
+        */
+
     }
 
     public string DisplayAll()
     {
-        string commenting = $@"Comments:
-                            -{_commentUser}- {_comments}";
+        string commenting = $"{_commentUser} - {_comments}";
         return commenting;
 
 

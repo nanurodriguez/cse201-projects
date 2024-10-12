@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices.Marshalling;
 using System.Transactions;
 
 class Program
@@ -6,11 +7,13 @@ class Program
     static void Main(string[] args)
     {
         string title1 = "How to use product 1 video";
-        string author1 = "USER1";
-        int lenght = 60;
-        Comment comment1 = new Comment("UserX", "Great Job!");
+        string author1 = "Author";
+        int lenght1 = 60;
 
-        Video video1 = new Video(title1, author1, lenght, comment1);
+        string comments1 = "Alien User - How great! , Alien UserX - How awesome! , Alien UserH - Let's do it! , Alien UserM - WOW!";
+
+
+        Video video1 = new Video(title1, author1, lenght1, comments1);
         Console.WriteLine(video1.DisplayAll());
     }
 }

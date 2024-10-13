@@ -7,9 +7,7 @@ public class Product
 
     private string _productName;
     private int _productId;
-
     private double _productCost;
-
     private int _quantity;
 
     public Product(string productName, int productID, double productCost, int quantity)
@@ -20,16 +18,17 @@ public class Product
         _quantity = quantity;
     }
 
-    public double GetTotalCost(double productCost, int quantity)
+    public double GetTotalCost()
     {
         //- Total product Cost: price per unit * quantity of each product.
-        return productCost * quantity;
+        return _productCost * _quantity;
     }
 
 
-    public void DisplayAll()
+    public string DisplayAll()
     {
-
+        string product = @$"Item: {_productName} - Product ID: {_productId} - ${_productCost} - x {_quantity}";
+        return product;
     }
 
 

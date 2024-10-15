@@ -26,7 +26,7 @@ public class Order
 
     public double CalculateTotalCost()
     {
-        int totalcost = 0;
+        int totalcost1 = 0;
 
 
         //sum of the total cost of each product plus a one time shipping cost.
@@ -34,33 +34,34 @@ public class Order
         if (orderAddress == true)
         {
             _shippingcost = 5;
-            totalcost = totalcost + _shippingcost;
+            totalcost1 = totalcost1 + _shippingcost;
         }
         else
         {
             _shippingcost = 35;
-            totalcost = totalcost + _shippingcost;
+            totalcost1 = totalcost1 + _shippingcost;
         }
 
-        return totalcost;
+        return totalcost1;
     }
 
     public string DisplayPackingLabel()
     {
-        string packingLabel = "";
+        string packingLabel = $"Customer Packing Label: {"\n"}";
         //A packing label should list the name and product id of each product in the order.
         foreach (var item in _products)
         {
             string label = item;
-            packingLabel = packingLabel + label + "\n";
+            packingLabel = $"{packingLabel} {label} {"\n"}";
         }
         return packingLabel;
     }
 
+
     public string DisplayShippingLabel()
     {
         // should list the name and address of the customer.
-        string shippingLabel = $"{_nameCustomer.DisplayAll()} {_address.DisplayAll()}";
+        string shippingLabel = $"Shipping Label: {"\n"} Name: {_nameCustomer.DisplayAll()} {"\n"}Address: {_address.DisplayAll()} {"\n"}";
         return shippingLabel;
     }
 

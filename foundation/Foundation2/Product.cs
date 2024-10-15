@@ -27,8 +27,8 @@ public class Product
 
     public string DisplayAll()
     {
-        string product = @$"Item: {_productName} - Product ID: {_productId} - ${_productCost} - x {_quantity}";
-        return product;
+        string product1 = @$"Item: {_productName} - Product ID: {_productId} - ${_productCost} - x {_quantity}";
+        return product1;
     }
 
 

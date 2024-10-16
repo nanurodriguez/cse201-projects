@@ -1,11 +1,13 @@
+using System;
+using System.Net;
 
-
+/*
 public class PictureBook : Book // Picture Book is a BOOK
 {
 
     private string _illustrator = "";
 
-    public PictureBook(string author, string title, string illustrator) : base(author, title)
+    public PictureBook(string title, string author, string illustrator) : base(title, author)
     {
         _illustrator = illustrator;
     }
@@ -21,10 +23,11 @@ public class PictureBook : Book // Picture Book is a BOOK
     public string GetIllustratorInfo()
     {
 
-        return $"Illustrator: {_title} by {_author} illustrated by {_illustrator}";
+        return $"{_title} by {_author} illustrated by {_illustrator}";
     }
 
 
 
 
 }
+*/

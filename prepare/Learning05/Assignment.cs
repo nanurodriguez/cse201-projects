@@ -1,6 +1,33 @@
 using System;
 using System.Net;
 
+public class Assignment
+{
+    private string _studentName;
+    private string _topic;
+
+    public Assignment()
+    {
+        _studentName = "student";
+        _topic = "topic";
+    }
+    public Assignment(string studentName, string topic)
+    {
+        _studentName = studentName;
+        _topic = topic;
+    }
+
+    public string GetSummary()
+    {
+        return $"{_studentName} , {_topic}";
+    }
+
+
+
+
+}
+
+/*
 public class Book
 {
     protected string _author = ""; //protected is accessible to this class and any other class that derives from it
@@ -11,10 +38,11 @@ public class Book
         _author = "Anonnymous";
         _title = "Unknown";
     }
-    public Book(string author, string title)
+    public Book(string title, string author)
     {
-        _author = author;
         _title = title;
+
+        _author = author;
     }
 
     public string GetAuthor()
@@ -38,3 +66,4 @@ public class Book
         return $"{_title} by {_author} ";
     }
 }
+*/

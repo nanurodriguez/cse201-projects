@@ -10,9 +10,10 @@ class Program
 
         Console.WriteLine(book1.GetBookInfo());
 
-        Book book2 = new Book();
+        PictureBook book2 = new PictureBook();
         book2.SetAuthor("Bell");
         book2.SetTitle("Los Amores");
+        book2.SetIllustrator("Brookly");
         Console.WriteLine(book2.GetBookInfo());
 
     }

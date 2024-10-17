@@ -1,15 +1,17 @@
 using System;
 
 public class BreathingActivity : Activity
-{
-    public BreathingActivity(string name, string description, int duration) : base(name, description, duration)
-    {
 
+{
+    private string _message;
+    public BreathingActivity(string name, string description, int duration, string message) : base(name, description, duration)
+    {
+        _message = message;
     }
 
     public void Run()
     {
-        //how it will display the activity
+        //List<string> breathing = ["Breath in", "Breath out"];
     }
 
 

@@ -6,5 +6,6 @@ class Program
     {
         Activity activity1 = new Activity("Breathing Excercises", "I don't know yet", 20);
         Console.WriteLine(activity1.DisplayStartingMessage());
+
     }
 }

@@ -23,6 +23,7 @@ class Program
             switch (selection)
             {
                 case "1": //Displaying Content of BreathingActivity
+                    int duration = 0;
                     BreathingActivity breathingActivity = new BreathingActivity("Breathing Activity", "Description", 20, "Get Ready...");
 
                     breathingActivity.Run();

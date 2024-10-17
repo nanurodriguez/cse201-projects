@@ -17,7 +17,7 @@ public class Activity
     public string DisplayStartingMessage()
     {
 
-        return $"Welcome to {_name}!{"\n"}{_description}{"\n"}It will take {_duration} seconds.";
+        return $"Welcome to {_name}!{"\n"}{_description}{"\n"}";
     }
 
     public string DisplayEndingMessage()

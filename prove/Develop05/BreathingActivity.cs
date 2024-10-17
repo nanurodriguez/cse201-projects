@@ -23,9 +23,13 @@ public class BreathingActivity : Activity
         while (DateTime.Now < endTime)
         {
             string b = breathing[i];
-            Console.Write(b);
-            Thread.Sleep(5000);
-            Console.Write("\b \b");
+            for (int i = 5; i > 0; i--)
+            {
+                Console.Write(i);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+            }
+
             i++;
 
             if (i >= breathing.Count)

@@ -22,7 +22,7 @@ public class Activity
 
     public string DisplayEndingMessage()
     {
-        return "Goodbye!";
+        return " Done! I hope you enjoyed this Activity my friend!";
     }
     public void ShowSpinner(int seconds)
     {

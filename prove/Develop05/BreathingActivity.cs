@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 
 public class BreathingActivity : Activity
 
@@ -18,21 +19,21 @@ public class BreathingActivity : Activity
         breathing.Add("Now let's breathe out...");
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(10);
+        DateTime endTime = startTime.AddSeconds(20);
 
         int i = 0;
         while (DateTime.Now < endTime)
         {
             string b = breathing[i];
             Console.Write(b);
-            Thread.Sleep(5000);
-            Console.Write("\b \b");
+            Thread.Sleep(1000);
             for (int count = 5; count > 0; count--)
             {
                 Console.Write(count);
                 Thread.Sleep(1000);
                 Console.Write("\b \b");
             }
+            Console.WriteLine("");
             i++;
 
             if (i >= breathing.Count)
@@ -42,7 +43,12 @@ public class BreathingActivity : Activity
 
         }
 
-        Console.WriteLine("Done...");
+        Thread.Sleep(2000);
+        Console.WriteLine($"{"\n"}{DisplayEndingMessage()}{"\n"}");
+        Thread.Sleep(2000);
+
+
+
 
     }
 

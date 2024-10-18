@@ -38,9 +38,11 @@ public class ListingActivity : Activity
             _count = lista.Count;
             Console.WriteLine($"You've entered {_count} entries");
             Console.SetCursorPosition(0, Console.CursorTop);
-            Console.WriteLine(base.DisplayEndingMessage());
             Thread.Sleep(1000);
         }
+        Thread.Sleep(2000);
+        Console.WriteLine($"{"\n"}{DisplayEndingMessage()}{"\n"}");
+        Thread.Sleep(2000);
     }
     public void GetRandomPrompt()
     {

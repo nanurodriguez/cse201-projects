@@ -23,8 +23,8 @@ public class ReflectingActivity : Activity
 
         while (DateTime.Now < endTime)
         {
-            base.DisplayStartingMessage();
-            base.ShowSpinner(1);
+            Console.WriteLine(base.DisplayStartingMessage());
+            base.ShowSpinner(3);
             Thread.Sleep(1000);
             Console.Clear();
             GetRandomPrompt();//Random prompt
@@ -33,16 +33,20 @@ public class ReflectingActivity : Activity
             Console.WriteLine($"Now ponder on each of the following questions as they related to this experience \n");
             Console.Write("You should begin in...");
             Thread.Sleep(1000);
-            base.ShowCountDown(2);
+            base.ShowCountDown(3);
             Console.SetCursorPosition(0, Console.CursorTop);
             GetRandomQuestion();//1st Random question
-            base.ShowSpinner(1);
+            base.ShowSpinner(3);
             Console.SetCursorPosition(0, Console.CursorTop);
             GetRandomQuestion();//2nd Random question
-            base.ShowSpinner(1);
+            Console.WriteLine("");
+            base.ShowSpinner(3);
             Console.SetCursorPosition(0, Console.CursorTop);
             Thread.Sleep(1000);
         }
+        Thread.Sleep(2000);
+        Console.WriteLine($"{"\n"}{DisplayEndingMessage()}{"\n"}");
+        Thread.Sleep(2000);
 
     }
     public void GetRandomPrompt()

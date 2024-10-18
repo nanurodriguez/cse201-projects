@@ -24,7 +24,7 @@ class Program
             switch (selection)
             {
                 case "1": //Displaying Content of BreathingActivity
-                    BreathingActivity breathingActivity = new BreathingActivity("Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.", 0, "Get Ready...");
+                    BreathingActivity breathingActivity = new BreathingActivity("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.", 0, "Get Ready...");
 
                     breathingActivity.Run();
 

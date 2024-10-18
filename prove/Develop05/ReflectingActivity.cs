@@ -23,38 +23,52 @@ public class ReflectingActivity : Activity
 
         while (DateTime.Now < endTime)
         {
-            base.ShowSpinner(20);
-            Thread.Sleep(3000);
-            int randomPrompt = random.Next(_prompts.Count);
-            Console.WriteLine(randomPrompt);
-            Console.WriteLine("When you have something in mind, press Y to continue...");
+            base.DisplayStartingMessage();
+            base.ShowSpinner(1);
+            Thread.Sleep(1000);
+            Console.Clear();
+            GetRandomPrompt();//Random prompt
+            Console.WriteLine("When you have something in mind, press ENTER to continue...");
             Console.ReadLine();
             Console.WriteLine($"Now ponder on each of the following questions as they related to this experience \n");
             Console.Write("You should begin in...");
             Thread.Sleep(1000);
-            base.ShowCountDown(5);
-            int randomQuestion = random.Next(_questions.Count);
-            Console.WriteLine(randomQuestion);
+            base.ShowCountDown(2);
+            Console.SetCursorPosition(0, Console.CursorTop);
+            GetRandomQuestion();//1st Random question
+            base.ShowSpinner(1);
+            Console.SetCursorPosition(0, Console.CursorTop);
+            GetRandomQuestion();//2nd Random question
+            base.ShowSpinner(1);
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Thread.Sleep(1000);
         }
 
     }
-    public string GetRandomPrompt()
+    public void GetRandomPrompt()
+    {
+        Random random = new Random();
+        int randomPrompt = random.Next(_prompts.Count); //RANDOM PROMPT
+
+        Console.WriteLine(_prompts[randomPrompt]);
+
+
+    }
+
+    public void GetRandomQuestion()
+    {
+        Random random = new Random();
+        int randomQuestion = random.Next(_questions.Count); //RANDOM QUESTION
+        Console.WriteLine(_questions[randomQuestion]);
+    }
+    public string DisplayPrompt()
     {
         return "";
     }
 
-    public string GetRandomQuestion()
+    public string DisplayQuestion()
     {
         return "";
-    }
-    public void DisplayPrompt()
-    {
-
-    }
-
-    public void DisplayQuestion()
-    {
-
     }
 
 }

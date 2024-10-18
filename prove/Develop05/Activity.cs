@@ -22,11 +22,10 @@ public class Activity
 
     public string DisplayEndingMessage()
     {
-        return " Done! I hope you enjoyed this Activity my friend!";
+        return "Done! I hope you enjoyed this Activity my friend!";
     }
     public void ShowSpinner(int seconds)
     {
-        Console.WriteLine("Get Ready...");
         List<string> animationStrings = new List<string>();
         animationStrings.Add("("); //(~‾⌣‾)~
         animationStrings.Add("~");

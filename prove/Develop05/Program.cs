@@ -31,8 +31,11 @@ class Program
                     break;
 
                 case "2": // Display Content of ListingActivity
-                    ListingActivity listingActivity = new ListingActivity();
-                    //listingActivity.Run();
+                    List<string> promptListing = ["Who are people that you appreciate?","What are personal strengths of yours?",
+                    "Who are people that you have helped this week?", "When have you felt the Holy Ghost this month?", "Who are some of your personal heroes?"];
+
+                    ListingActivity listingActivity = new ListingActivity("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", 0, 0, promptListing);
+                    listingActivity.Run();
                     break;
 
                 case "3": //Displaying Content of ReflectingActivity

@@ -21,12 +21,13 @@ public class BreathingActivity : Activity
         while (DateTime.Now < endIntTime)
         {
             Console.WriteLine("Get Ready..."); // should be in the program class so then can display the spinner?
+            Thread.Sleep(2000);
             List<string> breathing = new List<string>();
             breathing.Add("Let's breathe in...");
             breathing.Add("Now let's breathe out...");
 
             DateTime startTime = DateTime.Now;
-            DateTime endTime = startTime.AddSeconds(0);
+            DateTime endTime = startTime.AddSeconds(intTime);
 
             int i = 0;
             while (DateTime.Now < endTime)

@@ -14,7 +14,7 @@ public class BreathingActivity : Activity
     public void Run()
     {
         Console.WriteLine("How many seconds would you like to work on this activity?");
-        int intTime = Convert.ToInt32(Console.ReadLine());
+        int duration = Convert.ToInt32(Console.ReadLine());
         DateTime startIntTime = DateTime.Now;
         DateTime endIntTime = startIntTime.AddSeconds(intTime);
 

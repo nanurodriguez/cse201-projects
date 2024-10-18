@@ -4,10 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("Welcome to the Mindfulness Program! I am glad you are back!");
         while (true)
         {
             //Menu Options given:
-            Console.WriteLine("Welcome to the Mindfulness Program! I am glad you decided to return..");
+            Console.WriteLine("Please select one of the following menu options: ");
             Console.WriteLine("1. Breathing Activity: ");
             Console.WriteLine("2. Listing Activity: ");
             Console.WriteLine("3. Reflection Activity: ");

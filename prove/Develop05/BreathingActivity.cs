@@ -20,8 +20,8 @@ public class BreathingActivity : Activity
 
         while (DateTime.Now < endIntTime)
         {
-            Console.WriteLine("Get Ready..."); // should be in the program class so then can display the spinner?
-            Thread.Sleep(2000);
+            base.ShowSpinner(20);
+            Thread.Sleep(3000);
             List<string> breathing = new List<string>();
             breathing.Add("Let's breathe in...");
             breathing.Add("Now let's breathe out...");
@@ -35,12 +35,16 @@ public class BreathingActivity : Activity
                 string b = breathing[i];
                 Console.Write(b);
                 Thread.Sleep(1000);
+
+                base.ShowCountDown(5);
+                /*
                 for (int count = 5; count > 0; count--)
                 {
                     Console.Write(count);
                     Thread.Sleep(1000);
                     Console.Write("\b \b");
                 }
+                */
                 Console.WriteLine("");
                 i++;
 

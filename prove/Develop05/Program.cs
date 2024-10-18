@@ -4,11 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-
         while (true)
         {
             //Menu Options given:
-
+            Console.WriteLine("Welcome to the Mindfulness Program! I am glad you decided to return..");
             Console.WriteLine("1. Breathing Activity: ");
             Console.WriteLine("2. Listing Activity: ");
             Console.WriteLine("3. Reflection Activity: ");
@@ -24,7 +23,7 @@ class Program
             switch (selection)
             {
                 case "1": //Displaying Content of BreathingActivity
-                    BreathingActivity breathingActivity = new BreathingActivity("Breathing Activity", "Description", 0, "Get Ready...");
+                    BreathingActivity breathingActivity = new BreathingActivity("Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.", 20, "Get Ready...");
 
                     breathingActivity.Run();
 

@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using System.Diagnostics;
 
 public class BreathingActivity : Activity
@@ -12,43 +13,46 @@ public class BreathingActivity : Activity
 
     public void Run()
     {
+        Console.WriteLine("How many seconds would you like to work on this activity?");
+        int intTime = Convert.ToInt32(Console.ReadLine());
+        DateTime startIntTime = DateTime.Now;
+        DateTime endIntTime = startIntTime.AddSeconds(intTime);
 
-        Console.WriteLine("Get Ready..."); // should be in the program class so then can display the spinner?
-        List<string> breathing = new List<string>();
-        breathing.Add("Let's breathe in...");
-        breathing.Add("Now let's breathe out...");
-
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(20);
-
-        int i = 0;
-        while (DateTime.Now < endTime)
+        while (DateTime.Now < endIntTime)
         {
-            string b = breathing[i];
-            Console.Write(b);
-            Thread.Sleep(1000);
-            for (int count = 5; count > 0; count--)
+            Console.WriteLine("Get Ready..."); // should be in the program class so then can display the spinner?
+            List<string> breathing = new List<string>();
+            breathing.Add("Let's breathe in...");
+            breathing.Add("Now let's breathe out...");
+
+            DateTime startTime = DateTime.Now;
+            DateTime endTime = startTime.AddSeconds(0);
+
+            int i = 0;
+            while (DateTime.Now < endTime)
             {
-                Console.Write(count);
+                string b = breathing[i];
+                Console.Write(b);
                 Thread.Sleep(1000);
-                Console.Write("\b \b");
-            }
-            Console.WriteLine("");
-            i++;
+                for (int count = 5; count > 0; count--)
+                {
+                    Console.Write(count);
+                    Thread.Sleep(1000);
+                    Console.Write("\b \b");
+                }
+                Console.WriteLine("");
+                i++;
 
-            if (i >= breathing.Count)
-            {
-                i = 0;
-            }
+                if (i >= breathing.Count)
+                {
+                    i = 0;
+                }
 
+            }
         }
-
         Thread.Sleep(2000);
         Console.WriteLine($"{"\n"}{DisplayEndingMessage()}{"\n"}");
         Thread.Sleep(2000);
-
-
-
 
     }
 

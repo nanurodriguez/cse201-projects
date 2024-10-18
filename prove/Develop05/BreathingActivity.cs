@@ -16,7 +16,7 @@ public class BreathingActivity : Activity
         Console.WriteLine("How many seconds would you like to work on this activity?");
         int duration = Convert.ToInt32(Console.ReadLine());
         DateTime startIntTime = DateTime.Now;
-        DateTime endIntTime = startIntTime.AddSeconds(intTime);
+        DateTime endIntTime = startIntTime.AddSeconds(duration);
 
         while (DateTime.Now < endIntTime)
         {
@@ -27,7 +27,7 @@ public class BreathingActivity : Activity
             breathing.Add("Now let's breathe out...");
 
             DateTime startTime = DateTime.Now;
-            DateTime endTime = startTime.AddSeconds(intTime);
+            DateTime endTime = startTime.AddSeconds(duration);
 
             int i = 0;
             while (DateTime.Now < endTime)

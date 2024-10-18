@@ -54,6 +54,7 @@ class Program
 
                 case "4":
                     Console.WriteLine("GoodBye!");
+                    Console.Clear();
                     break;
                 default: // will prompt the user to enter the correct option
                     Console.WriteLine("Incorrect Entry! Please try again by selecting the options 1-5.");

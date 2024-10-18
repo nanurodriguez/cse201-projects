@@ -12,6 +12,8 @@ public class ListingActivity : Activity
     }
     public void Run()
     {
+        Console.Clear();
+        Console.WriteLine(base.DisplayStartingMessage());
         Console.WriteLine("How many seconds would you like to work on this activity?");
         int duration = Convert.ToInt32(Console.ReadLine());
         DateTime startIntTime = DateTime.Now;
@@ -19,7 +21,6 @@ public class ListingActivity : Activity
 
         while (DateTime.Now < endTime)
         {
-            Console.WriteLine(base.DisplayStartingMessage());
             base.ShowSpinner(3);
             Thread.Sleep(1000);
             Console.Clear();
@@ -37,12 +38,14 @@ public class ListingActivity : Activity
             List<string> lista = GetListFromUser(endTime); // Getting the list they typed in the console
             _count = lista.Count;
             Console.WriteLine($"You've entered {_count} entries");
+            Thread.Sleep(1000);
             Console.SetCursorPosition(0, Console.CursorTop);
             Thread.Sleep(1000);
+            Thread.Sleep(1000);
+            Console.WriteLine($"{"\n"}{base.DisplayEndingMessage()}{"\n"}");
+            Thread.Sleep(1000);
+            Console.Clear();
         }
-        Thread.Sleep(2000);
-        Console.WriteLine($"{"\n"}{DisplayEndingMessage()}{"\n"}");
-        Thread.Sleep(2000);
     }
     public void GetRandomPrompt()
     {

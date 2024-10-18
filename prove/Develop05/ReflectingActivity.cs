@@ -14,6 +14,8 @@ public class ReflectingActivity : Activity
 
     public void Run()
     {
+        Console.Clear();
+        Console.WriteLine(base.DisplayStartingMessage());
         Console.WriteLine("How many seconds would you like to work on this activity?");
         int duration = Convert.ToInt32(Console.ReadLine());
         DateTime startIntTime = DateTime.Now;
@@ -23,7 +25,6 @@ public class ReflectingActivity : Activity
 
         while (DateTime.Now < endTime)
         {
-            Console.WriteLine(base.DisplayStartingMessage());
             base.ShowSpinner(3);
             Thread.Sleep(1000);
             Console.Clear();
@@ -36,17 +37,21 @@ public class ReflectingActivity : Activity
             base.ShowCountDown(3);
             Console.SetCursorPosition(0, Console.CursorTop);
             GetRandomQuestion();//1st Random question
+            Thread.Sleep(3000);
             base.ShowSpinner(3);
+            Console.Clear();
             Console.SetCursorPosition(0, Console.CursorTop);
             GetRandomQuestion();//2nd Random question
+            Thread.Sleep(3000);
             Console.WriteLine("");
             base.ShowSpinner(3);
+            Console.Clear();
             Console.SetCursorPosition(0, Console.CursorTop);
             Thread.Sleep(1000);
+            Console.WriteLine($"{"\n"}{base.DisplayEndingMessage()}{"\n"}");
+            Thread.Sleep(1000);
+            Console.Clear();
         }
-        Thread.Sleep(2000);
-        Console.WriteLine($"{"\n"}{DisplayEndingMessage()}{"\n"}");
-        Thread.Sleep(2000);
 
     }
     public void GetRandomPrompt()

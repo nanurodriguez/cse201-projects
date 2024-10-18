@@ -13,6 +13,7 @@ public class BreathingActivity : Activity
 
     public void Run()
     {
+        Console.Clear();
         Console.WriteLine(base.DisplayStartingMessage());
         Console.WriteLine("How many seconds would you like to work on this activity?");
         int duration = Convert.ToInt32(Console.ReadLine());
@@ -22,7 +23,8 @@ public class BreathingActivity : Activity
         while (DateTime.Now < endIntTime)
         {
             base.ShowSpinner(3);
-            Thread.Sleep(3000);
+            Thread.Sleep(1000);
+            Console.Clear();
             List<string> breathing = new List<string>();
             breathing.Add("Let's breathe in...");
             breathing.Add("Now let's breathe out...");
@@ -49,7 +51,8 @@ public class BreathingActivity : Activity
         }
         Thread.Sleep(2000);
         Console.WriteLine($"{"\n"}{DisplayEndingMessage()}{"\n"}");
-        Thread.Sleep(2000);
+        Thread.Sleep(1000);
+        Console.Clear();
 
     }
 

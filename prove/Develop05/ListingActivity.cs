@@ -22,7 +22,6 @@ public class ListingActivity : Activity
         while (DateTime.Now < endTime)
         {
             base.ShowSpinner(3);
-            Thread.Sleep(1000);
             Console.Clear();
             GetRandomPrompt();//Random prompt
             Console.SetCursorPosition(0, Console.CursorTop);
@@ -31,16 +30,14 @@ public class ListingActivity : Activity
             Thread.Sleep(1000);
             base.ShowCountDown(3);
             Console.WriteLine("");
-            Console.SetCursorPosition(0, Console.CursorTop);
             base.ShowSpinner(3);
             Console.SetCursorPosition(0, Console.CursorTop);
             Console.Clear();
             List<string> lista = GetListFromUser(endTime); // Getting the list they typed in the console
             _count = lista.Count;
+            Thread.Sleep(1000);
             Console.WriteLine($"You've entered {_count} entries");
-            Thread.Sleep(1000);
             Console.SetCursorPosition(0, Console.CursorTop);
-            Thread.Sleep(1000);
             Thread.Sleep(1000);
             Console.WriteLine($"{"\n"}{base.DisplayEndingMessage()}{"\n"}");
             Thread.Sleep(1000);

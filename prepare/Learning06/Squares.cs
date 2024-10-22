@@ -9,12 +9,15 @@ public class Squares : Shapes
         return _side;
     }
 
-    public double SetSide(double side)
+    public void SetSide(double side)
     {
         _side = side;
     }
 
-    public override
+    public override double GetArea()
+    {
+        return _side * _side;
+    }
 }
 /*
 public class SalaryEmployee : Employee

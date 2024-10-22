@@ -1,0 +1,40 @@
+//child class
+
+public class Squares : Shapes
+{
+    private double _side = 0;
+
+    public double GetSide()
+    {
+        return _side;
+    }
+
+    public double SetSide(double side)
+    {
+        _side = side;
+    }
+
+    public override
+}
+/*
+public class SalaryEmployee : Employee
+{
+    private float _salary = 0;
+
+    public float GetSalary()
+    {
+        return _salary;
+    }
+    public void SetSalary(float salary)
+    {
+        _salary = salary;
+    }
+
+    public override float GetPay()
+    {
+        return _salary / 12;
+    }
+
+}
+
+*/

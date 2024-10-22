@@ -22,24 +22,23 @@ public class Activity
 
     public string DisplayEndingMessage()
     {
-        return " Done! I hope you enjoyed this Activity my friend!";
+        return "Done! I hope you enjoyed this Activity my friend!";
     }
     public void ShowSpinner(int seconds)
     {
-
         List<string> animationStrings = new List<string>();
         animationStrings.Add("("); //(~‾⌣‾)~
         animationStrings.Add("~");
-        animationStrings.Add("‾");
-        animationStrings.Add("⌣");
-        animationStrings.Add("‾");
+        animationStrings.Add("^");
+        animationStrings.Add("=");
+        animationStrings.Add("^");
         animationStrings.Add(")");
         animationStrings.Add("~");
         animationStrings.Add("~");//~(‾⌣‾~)
         animationStrings.Add("(");
-        animationStrings.Add("‾");
-        animationStrings.Add("⌣");
-        animationStrings.Add("‾");
+        animationStrings.Add("^");
+        animationStrings.Add("=");
+        animationStrings.Add("^");
         animationStrings.Add("~");
         animationStrings.Add(")");
 
@@ -51,9 +50,13 @@ public class Activity
         while (DateTime.Now < endTime)
         {
             string s = animationStrings[i];
-            Console.WriteLine(s);
-            Thread.Sleep(1000);
-            Console.WriteLine("\b \b \b \b \b \b \b");
+            Console.Write(s);
+            Thread.Sleep(200);
+            //Console.Write("\b \b \b \b \b \b");
+            if ((i + 1) % 7 == 0)
+            {
+                Console.SetCursorPosition(0, Console.CursorTop);
+            }
             i++;
 
             if (i >= animationStrings.Count)
@@ -61,10 +64,7 @@ public class Activity
                 i = 0;
             }
         }
-
-
-        Console.WriteLine("Spinner Ended");
-
+        //Stretch activity to add animation emoji spinner.
     }
 
     public void ShowCountDown(int seconds)
@@ -73,12 +73,11 @@ public class Activity
 
         for (i = seconds; i > 0; i--)
         {
-            Console.WriteLine(i);
+            Console.Write(i);
             Thread.Sleep(1000);
-            Console.WriteLine("\b \b");
+            Console.Write("\b \b");
         }
 
-        Console.WriteLine("The Count Down Ended");
     }
 
 

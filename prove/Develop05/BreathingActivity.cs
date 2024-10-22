@@ -13,6 +13,8 @@ public class BreathingActivity : Activity
 
     public void Run()
     {
+        Console.Clear();
+        Console.WriteLine(base.DisplayStartingMessage());
         Console.WriteLine("How many seconds would you like to work on this activity?");
         int duration = Convert.ToInt32(Console.ReadLine());
         DateTime startIntTime = DateTime.Now;
@@ -20,8 +22,9 @@ public class BreathingActivity : Activity
 
         while (DateTime.Now < endIntTime)
         {
-            Console.WriteLine("Get Ready..."); // should be in the program class so then can display the spinner?
-            Thread.Sleep(2000);
+            base.ShowSpinner(3);
+            Thread.Sleep(1000);
+            Console.Clear();
             List<string> breathing = new List<string>();
             breathing.Add("Let's breathe in...");
             breathing.Add("Now let's breathe out...");
@@ -35,12 +38,7 @@ public class BreathingActivity : Activity
                 string b = breathing[i];
                 Console.Write(b);
                 Thread.Sleep(1000);
-                for (int count = 5; count > 0; count--)
-                {
-                    Console.Write(count);
-                    Thread.Sleep(1000);
-                    Console.Write("\b \b");
-                }
+                base.ShowCountDown(5);
                 Console.WriteLine("");
                 i++;
 
@@ -53,7 +51,8 @@ public class BreathingActivity : Activity
         }
         Thread.Sleep(2000);
         Console.WriteLine($"{"\n"}{DisplayEndingMessage()}{"\n"}");
-        Thread.Sleep(2000);
+        Thread.Sleep(1000);
+        Console.Clear();
 
     }
 

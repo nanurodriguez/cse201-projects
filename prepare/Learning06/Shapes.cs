@@ -12,7 +12,10 @@ public abstract class Shapes
     {
         _color = color;
     }
-
+    public Shapes(string color)
+    {
+        _color = color;
+    }
     public abstract double GetArea();
 
 }

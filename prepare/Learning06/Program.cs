@@ -4,19 +4,28 @@ class Program
 {
     static void Main(string[] args)
     {
-        Square square1 = new Square();
-        square1.SetSide(2);
+        Square square1 = new Square("Orange", 5);
+        //Console.WriteLine(square1.GetArea());
 
-        Rectangle rectangle1 = new Rectangle();
-        rectangle1.SetWidth(3);
+        Rectangle rectangle1 = new Rectangle("Blue", 2, 5);
 
-        Circle circle1 = new Circle();
-        circle1.SetRadius(1.5);
+        Circle circle1 = new Circle("Red", 5);
 
         List<Shapes> shape = new List<Shapes>();
         shape.Add(square1);
         shape.Add(circle1);
-        shape.Add(Rec)
+        shape.Add(rectangle1);
+
+        foreach (Shapes s in shape)
+        {
+            double shapeColorArea = s.GetArea();
+        }
+    }
+
+    public static void DisplayAreaShapeInfo(Shapes sh)
+    {
+        double area = sh.GetArea();
+        Console.WriteLine($"Shape Color: {sh.GetColor()} Area: {sh.GetArea}");
     }
     /* HOMEWORK PRACTICE ASSIGNMENT
     HourlyEmployee employee1 = new HourlyEmployee();

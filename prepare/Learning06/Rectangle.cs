@@ -40,6 +40,22 @@ public class Rectangle : Shapes
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* HOMEWORK EXAMPLE:
 
 public class HourlyEmployee : Employee

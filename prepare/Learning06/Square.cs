@@ -25,6 +25,24 @@ public class Square : Shapes
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 public class SalaryEmployee : Employee
 {

@@ -6,7 +6,7 @@ class Program
     {
         Square square1 = new Square("Orange", 5);
 
-        Circle circle1 = new Circle("Red", 5);
+        Circle circle1 = new Circle("Red", 1.5);
 
         Rectangle rectangle1 = new Rectangle("Blue", 2, 5);
 
@@ -33,6 +33,16 @@ class Program
         double area = sh.GetArea();
         Console.WriteLine($"Shape Color: {sh.GetColor()} Area: {area}");
     }
+
+
+
+
+
+
+
+
+
+
     /* HOMEWORK PRACTICE ASSIGNMENT
     HourlyEmployee employee1 = new HourlyEmployee();
     employee1.SetName("Josh");

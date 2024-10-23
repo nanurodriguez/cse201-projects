@@ -31,7 +31,7 @@ class Program
     public static void DisplayAreaShapeInfo(Shapes sh)
     {
         double area = sh.GetArea();
-        Console.WriteLine($"Shape Color: {sh.GetColor()} Area: {area}");
+        Console.WriteLine($"Shape Color: {sh.GetColor()} -  Area: {area}");
     }
 
 

@@ -5,27 +5,33 @@ class Program
     static void Main(string[] args)
     {
         Square square1 = new Square("Orange", 5);
-        //Console.WriteLine(square1.GetArea());
-
-        Rectangle rectangle1 = new Rectangle("Blue", 2, 5);
 
         Circle circle1 = new Circle("Red", 5);
 
-        List<Shapes> shape = new List<Shapes>();
-        shape.Add(square1);
-        shape.Add(circle1);
-        shape.Add(rectangle1);
+        Rectangle rectangle1 = new Rectangle("Blue", 2, 5);
 
-        foreach (Shapes s in shape)
+
+
+        //DisplayAreaShapeInfo(square1);
+        // DisplayAreaShapeInfo(rectangle1);
+        //DisplayAreaShapeInfo(circle1);
+
+        List<Shapes> shapess = new List<Shapes>();
+        shapess.Add(square1);
+        shapess.Add(circle1);
+        shapess.Add(rectangle1);
+
+        foreach (Shapes s in shapess)
         {
             double shapeColorArea = s.GetArea();
+            DisplayAreaShapeInfo(s);
         }
     }
 
     public static void DisplayAreaShapeInfo(Shapes sh)
     {
         double area = sh.GetArea();
-        Console.WriteLine($"Shape Color: {sh.GetColor()} Area: {sh.GetArea}");
+        Console.WriteLine($"Shape Color: {sh.GetColor()} Area: {area}");
     }
     /* HOMEWORK PRACTICE ASSIGNMENT
     HourlyEmployee employee1 = new HourlyEmployee();

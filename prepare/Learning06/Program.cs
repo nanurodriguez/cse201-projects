@@ -4,11 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Square square1 = new Square("Orange", 5);
+        Square square1 = new Square("Orange Square", 5);
 
-        Circle circle1 = new Circle("Red", 1.5);
+        Circle circle1 = new Circle("Red Circle", 1.5);
 
-        Rectangle rectangle1 = new Rectangle("Blue", 2, 5);
+        Rectangle rectangle1 = new Rectangle("Blue Rectangle", 2, 5);
 
 
 
@@ -31,7 +31,7 @@ class Program
     public static void DisplayAreaShapeInfo(Shapes sh)
     {
         double area = sh.GetArea();
-        Console.WriteLine($"Shape Color: {sh.GetColor()} -  Area: {area}");
+        Console.WriteLine($"{sh.GetColor()} -  Area: {area}");
     }
 
 

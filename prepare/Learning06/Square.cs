@@ -1,6 +1,6 @@
 //child class
 
-public class Squares : Shapes
+public class Square : Shapes
 {
     private double _side = 0;
 

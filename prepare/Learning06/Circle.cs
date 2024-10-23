@@ -1,6 +1,6 @@
 //child class
 
-public class Circles : Shapes
+public class Circle : Shapes
 {
     private double _radius = 0;
 

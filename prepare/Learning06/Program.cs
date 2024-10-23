@@ -4,8 +4,19 @@ class Program
 {
     static void Main(string[] args)
     {
+        Square square1 = new Square();
+        square1.SetSide(2);
 
+        Rectangle rectangle1 = new Rectangle();
+        rectangle1.SetWidth(3);
 
+        Circle circle1 = new Circle();
+        circle1.SetRadius(1.5);
+
+        List<Shapes> shape = new List<Shapes>();
+        shape.Add(square1);
+        shape.Add(circle1);
+        shape.Add(Rec)
     }
     /* HOMEWORK PRACTICE ASSIGNMENT
     HourlyEmployee employee1 = new HourlyEmployee();

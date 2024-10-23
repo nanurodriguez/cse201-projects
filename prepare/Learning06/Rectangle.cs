@@ -1,7 +1,7 @@
 
 //child Class
 
-public class Rectangles : Shapes
+public class Rectangle : Shapes
 
 {
     private double _lenght = 0;
@@ -21,7 +21,7 @@ public class Rectangles : Shapes
     {
         return _width;
     }
-    public void GetWidth(double width)
+    public void SetWidth(double width)
     {
         _width = width;
     }

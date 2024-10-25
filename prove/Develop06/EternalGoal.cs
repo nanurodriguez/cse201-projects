@@ -1,5 +1,6 @@
 using System;
 
+//ETERNAL GOAL: it will never get checked off - like reading the scriptures or praying
 public class EternalGoal : Goal
 {
 

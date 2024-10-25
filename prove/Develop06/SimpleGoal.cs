@@ -1,5 +1,7 @@
 using System;
 
+// SIMPLE GOAL: A Goal that is done once and that's it- example: Visit a friend this weekend <> then the description: explaining what are the requirements and details etc.
+
 public class SimpleGoal : Goal
 {
     private bool _isComplete;
@@ -9,9 +11,9 @@ public class SimpleGoal : Goal
     {
 
     }
-    public override void RecordEvent()
+    public override void RecordEvent() // should mark a simple goal complete
     {
-        throw new NotImplementedException();
+
     }
 
     public override bool IsComplete()
@@ -21,6 +23,8 @@ public class SimpleGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        throw new NotImplementedException();
+        return @$"What is the name of your goal?{_shortName}{"\n"} 
+        What is a short description of it? {_description}{"\n"}
+        What is the amount of points associated with this goal?{_points}{"\n"}";
     }
 }

@@ -1,5 +1,6 @@
 using System;
-
+//CHECKLISTGOAL: Accomplished a certain number of times: like any goal you would like to do regularly- Walk 30 minutes twice a week- 2times check check
+// if you complete the goal (the amount of times set) then you will get a BONUS POINT
 public class ChecklistGoal : Goal
 {
     private int _amountCompleted;
@@ -13,7 +14,7 @@ public class ChecklistGoal : Goal
         _target = target;
         _bonus = bonus;
     }
-    public override void RecordEvent()
+    public override void RecordEvent()// marking number of times a checklist goal has been completed - returning the points value associated with recording the event
     {
         throw new NotImplementedException();
     }

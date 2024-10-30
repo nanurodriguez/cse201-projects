@@ -10,7 +10,14 @@ public class EternalGoal : Goal
     }
     public override void RecordEvent()
     {
-        throw new NotImplementedException();
+        if (_isComplete == true)
+        {
+            int newPoints = base._points += _points;
+            string completed = "X";
+
+            Console.WriteLine(newPoints);
+
+        }
     }
 
     public override bool IsComplete()
@@ -20,6 +27,7 @@ public class EternalGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        throw new NotImplementedException();
+        string goalString = $"Eternal Goal:{base._name},{base._description},{base._points}";
+        return goalString;
     }
 }

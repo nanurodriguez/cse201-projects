@@ -16,21 +16,30 @@ public class ChecklistGoal : Goal
     }
     public override void RecordEvent()// marking number of times a checklist goal has been completed - returning the points value associated with recording the event
     {
-        throw new NotImplementedException();
+        int currentPoints = base._points;
+        if (_amountCompleted == _target)
+        {
+            _bonus += currentPoints;
+            Console.WriteLine("You've got EXTRA POINTS!");
+        }
+
     }
 
     public override bool IsComplete()
     {
-        throw new NotImplementedException();
+
+        return _isComplete;
+
     }
 
     public override string GetDetailsString()
     {
-        return base.GetDetailsString();
+        return "";
     }
 
     public override string GetStringRepresentation()
     {
-        throw new NotImplementedException();
+        string goalString = $@"Checklist Goal:{base._name},{base._description},{base._points},{_isComplete},{_amountCompleted},{_target},{_bonus}";
+        return goalString;
     }
 }

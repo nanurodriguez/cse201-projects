@@ -9,22 +9,27 @@ public class SimpleGoal : Goal
     //Constructor
     public SimpleGoal(string name, string description, int points) : base(name, description, points)
     {
-
+        _isComplete = false;
     }
     public override void RecordEvent() // should mark a simple goal complete
     {
+        base._isComplete = true;
+        Console.WriteLine($"Congratulations! You have earned {base._points}");
+    }
 
+    public int GetPoints()
+    {
+        return base._points;
     }
 
     public override bool IsComplete()
     {
-        return false;
+        return _isComplete;
     }
 
     public override string GetStringRepresentation()
     {
-        return @$"What is the name of your goal?{_shortName}{"\n"} 
-        What is a short description of it? {_description}{"\n"}
-        What is the amount of points associated with this goal?{_points}{"\n"}";
+        string goalString = $"Simple Goal:{base._name},{base._description},{base._points},{_isComplete}";
+        return goalString;
     }
 }
